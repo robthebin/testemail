@@ -23,14 +23,10 @@ function sendmail($subject,$message)
 		$mail->Password = "TestPassword01";			//Password to use for SMTP authentication
 		$mail->setFrom('robthebintest@gmail.com', 'ACWD Mailer');	//Set who the message is to be sent from
 		$mail->addAddress('robthebintest@gmail.com', 'ACWD Mailer');	//Set who the message is to be sent to
-		
         $mail->isHTML(true);
-		
 		$mail->Subject = $subject;
-
 		$rootlink="http://localhost/phpcrudsample/public/modules/user/";
 		$link=$rootlink."unsubscribe.php ";
-		
 		$mail->Body = $message . "<br><br>" . "To stop receiving newsletters, click <a href=" . $link . ">here</a>" . "<br>";
 		
 		
@@ -38,7 +34,7 @@ function sendmail($subject,$message)
 			$sql = "SELECT  `email` FROM  `tb_user` WHERE  `subs` =1";
 			$result = $conn->query($sql);
     
-			foreach ($result as $row){
+			for ($i=0; $i<$n; $i++){
 			$mail->addBCC($row["email"]);
 			}
 			
