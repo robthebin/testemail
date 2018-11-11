@@ -34,7 +34,7 @@ function sendmail($subject,$message)
 			$sql = "SELECT  `email` FROM  `tb_user` WHERE  `subs` =1";
 			$result = $conn->query($sql);
     
-			for ($i=0; $i<$n; $i++){
+			foreach($result as $row){
 			$mail->addBCC($row["email"]);
 			}
 			
