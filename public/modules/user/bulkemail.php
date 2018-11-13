@@ -19,8 +19,8 @@ function sendmail($subject,$message)
 		$mail->Port = 587;							//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
 		$mail->SMTPSecure = 'tls';					//Set the encryption system to use - ssl (deprecated) or tls
 		$mail->SMTPAuth = true;						//Whether to use SMTP authentication
-		$mail->Username = "robthebintest@gmail.com";	//Username to use for SMTP authentication - use full email address for gmail
-		$mail->Password = "TestPassword01";			//Password to use for SMTP authentication
+		$mail->Username = "username";	//Username to use for SMTP authentication - use full email address for gmail
+		$mail->Password = "password";			//Password to use for SMTP authentication
 		$mail->setFrom('robthebintest@gmail.com', 'ACWD Mailer');	//Set who the message is to be sent from
 		$mail->addAddress('robthebintest@gmail.com', 'ACWD Mailer');	//Set who the message is to be sent to
         $mail->isHTML(true);
